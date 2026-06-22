@@ -1,0 +1,361 @@
+{
+  "info": {
+    "_postman_id": "f8ec09a8-5836-4bc4-ba79-fce2b9a346a8",
+    "name": "Crovver",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "33835572"
+  },
+  "item": [
+    {
+      "name": "Get Tenant",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "{{baseURL}}/tenants?externalUserId=9877233d-6152-42e0-ab9c-536fdfce7711",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "tenants"
+          ],
+          "query": [
+            {
+              "key": "externalUserId",
+              "value": "9877233d-6152-42e0-ab9c-536fdfce7711"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Subscription Status",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/subscriptions/status?publicKey=pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka&tenantId=9877233d-6152-42e0-ab9c-536fdfce7711",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "subscriptions",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "publicKey",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka"
+            },
+            {
+              "key": "tenantId",
+              "value": "9877233d-6152-42e0-ab9c-536fdfce7711"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Tenant",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"externalTenantId\": \"ed6ba7cb-6fc7-4bc8-9f1b-959607f4c4aa\",\r\n  \"externalUserId\": \"9877233d-6152-42e0-ab9c-536fdfce7711\",\r\n  \"name\": \"Ishan\",\r\n  \"ownerEmail\": \"ishanshrestha333@gmail.com\",\r\n  \"ownerName\": \"Ishann\",\r\n  \"slug\": \"ishan\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/tenants",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "tenants"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Tenant (Server Error)",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "externalTenantId",
+              "value": "ed6ba7cb-6fc7-4bc8-9f1b-959607f4c4aa",
+              "type": "text",
+              "uuid": "c0e97f30-e3b0-4c88-9307-5ec6dec1095d"
+            },
+            {
+              "key": "name",
+              "value": "Ishan",
+              "type": "text",
+              "uuid": "3a188bc3-6e8f-44a8-acaf-84b4a742a20a"
+            },
+            {
+              "key": "externalUserId",
+              "value": "9877233d-6152-42e0-ab9c-536fdfce7711",
+              "type": "text",
+              "uuid": "2425c8e0-9160-42f3-a51b-4e3fc5b9e539"
+            },
+            {
+              "key": "ownerName",
+              "value": "Ishann",
+              "type": "text",
+              "uuid": "123bf8cb-ec06-43ca-be74-4c82407371cc"
+            },
+            {
+              "key": "slug",
+              "value": "ishan",
+              "type": "text",
+              "uuid": "33c98758-3665-407f-acbb-f75eccd22b67"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseURL}}/tenants",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "tenants"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Plans",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/plans?publicKey=pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "plans"
+          ],
+          "query": [
+            {
+              "key": "publicKey",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Available Add-ons",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/tenants/ed6ba7cb-6fc7-4bc8-9f1b-959607f4c4aa/addons/available?publicKey=pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "tenants",
+            "ed6ba7cb-6fc7-4bc8-9f1b-959607f4c4aa",
+            "addons",
+            "available"
+          ],
+          "query": [
+            {
+              "key": "publicKey",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Credit Balance",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseURL}}/credits/balance?tenantId=9877233d-6152-42e0-ab9c-536fdfce7711&publicKey=pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "credits",
+            "balance"
+          ],
+          "query": [
+            {
+              "key": "tenantId",
+              "value": "9877233d-6152-42e0-ab9c-536fdfce7711"
+            },
+            {
+              "key": "publicKey",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cancel Subscription",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "pk_live_ncsx2rky9ndqik2mnxihvn4tlvxxwbka",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"externalTenantId\": \"9877233d-6152-42e0-ab9c-536fdfce7711\",\r\n    \"reason\": \"missing_features\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseURL}}/subscriptions/{{subscriptionId}}/cancel",
+          "host": [
+            "{{baseURL}}"
+          ],
+          "path": [
+            "subscriptions",
+            "{{subscriptionId}}",
+            "cancel"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseURL",
+      "value": ""
+    },
+    {
+      "key": "subscriptionId",
+      "value": ""
+    }
+  ]
+}
